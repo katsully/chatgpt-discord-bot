@@ -8,7 +8,7 @@ with open("keys.txt") as f:
 	lines = f.read().split('\n')
 	# openai api key
 	openai.api_key = lines[0]
-	openai.api_base = lines[1]
+	openai.api_base = lines[2]
 # close the file
 f.close()
 
