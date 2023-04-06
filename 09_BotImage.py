@@ -50,11 +50,11 @@ async def on_message(message):
             status = response.json()['status']
         image_url = response.json()['result']['contentUrl']
         print(image_url)
-        data = requests.get(image_url).content
+        # data = requests.get(image_url).content
 
-        f = open('img01.jpg', 'wb')
-        f.write(data)
-        f.close()
-        await message.channel.send("Here's your pic!", file=discord.File('img01.jpg'))
+        # f = open('img01.jpg', 'wb')
+        # f.write(data)
+        # f.close()
+        await message.channel.send(image_url)
 
 client.run(DISCORD_TOKEN)
