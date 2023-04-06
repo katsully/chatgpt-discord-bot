@@ -14,17 +14,6 @@ openai.api_key = os.environ["API_KEY"]
 DISCORD_TOKEN = os.environ["DISCORD_TOKEN"]
 openai.api_base = os.environ["API_BASE"]
 
-# with open("keys.txt") as f:
-# 	# converting our text file to a list of lines
-# 	lines = f.read().split('\n')
-# 	# openai api key
-# 	openai.api_key = lines[0]
-# 	# discord token
-# 	DISCORD_TOKEN = lines[1]
-# 	openai.api_base = lines[2]
-# # close the file
-# f.close()
-
 @client.event
 async def on_ready():
 	for guild in client.guilds:
