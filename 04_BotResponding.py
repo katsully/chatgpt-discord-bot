@@ -28,6 +28,9 @@ async def on_message(message):
 	# if author of the message is the bot, don't do anything
 	if message.author == client.user:
 		return
+	# ignore @everyone mentions
+	if message.mention_everyone:
+		return
 	# if the message mentions the bot, then do something
 	elif client.user.mentioned_in(message): 
 		await message.channel.send("Hello!")
