@@ -10,6 +10,7 @@ GUILD = "{Creative-Tech-Apprenticeship}"
 
 # create an object that will control our discord bot
 client = discord.Client(intents=discord.Intents.default())
+# env variables to be read by railway 
 openai.api_key = os.environ["API_KEY"]
 DISCORD_TOKEN = os.environ["DISCORD_TOKEN"]
 openai.api_base = os.environ["API_BASE"]
