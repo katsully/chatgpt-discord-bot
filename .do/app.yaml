@@ -1,8 +1,10 @@
 name: seahorse-app
-services:
-- environment_slug: python
-  github:
-    branch: main
-    deploy_on_push: true
-    repo: digitalocean/chatgpt-discord
-  name: chatgpt-discord
+region: New York  
+workers:  
+  - name: worker  
+    environment_slug: python  
+    github:  
+      repo: katsully/chatgpt-discord-bot 
+      branch: main  
+    instance_count: 1  
+    instance_size_slug: basic-xxs 
