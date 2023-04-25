@@ -1,16 +1,5 @@
 name: seahorse-app
 region: nyc  
-services:  
-  - name: web  
-    environment_slug: python  
-    github:  
-      repo: katsully/chatgpt-discord-bot  
-      branch: main  
-    instance_count: 1  
-    instance_size_slug: basic-xxs  
-    http_port: 8080  
-    routes:  
-      - path: /  
 workers:  
   - name: worker  
     environment_slug: python  
@@ -18,4 +7,5 @@ workers:
       repo: katsully/chatgpt-discord-bot  
       branch: main  
     instance_count: 1  
-    instance_size_slug: basic-xxs  
+    instance_size_slug: basic-xxs 
+    run_command: python bot.py 
