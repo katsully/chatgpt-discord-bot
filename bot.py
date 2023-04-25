@@ -1,6 +1,10 @@
 import openai
 import discord
 import os
+import logging  
+  
+logging.basicConfig(level=logging.INFO)  
+logging.info('Worker script started')  
 
 openai.api_type = "azure"
 openai.api_version = "2023-03-15-preview"
@@ -11,9 +15,9 @@ GUILD = "{Creative-Tech-Apprenticeship}"
 # create an object that will control our discord bot
 client = discord.Client(intents=discord.Intents.default())
 # env variables to be read by railway 
-openai.api_key = os.environ["API_KEY"]
-DISCORD_TOKEN = os.environ["DISCORD_TOKEN"]
-openai.api_base = os.environ["API_BASE"]
+openai.api_key = os.environ.get("API_KEY")
+DISCORD_TOKEN = os.environ.get("DISCORD_TOKEN")
+openai.api_base = os.environ.get("API_BASE")
 
 @client.event
 async def on_ready():
